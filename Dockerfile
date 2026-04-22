@@ -1,5 +1,5 @@
-# استخدام نظام تشغيل مصغر جداً (Alpine Linux) كقاعدة
-FROM alpine
+# استخدام صورة Nginx الجاهزة
+FROM nginx:alpine
 
-# تنفيذ أمر عند تشغيل الحاوية
-CMD ["echo", "Hello! Docker is now running inside my DevOps project."]
+# نسخ ملف الصفحة الذي أنشأناه إلى المجلد الخاص بـ Nginx داخل الحاوية
+COPY index.html /usr/share/nginx/html/index.html
